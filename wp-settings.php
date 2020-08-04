@@ -288,6 +288,11 @@ require ABSPATH . WPINC . '/blocks.php';
 require ABSPATH . WPINC . '/blocks/index.php';
 require ABSPATH . WPINC . '/block-patterns.php';
 
+//Load all WP core without starting init, or loading plugins or themes. 
+if(MEDIUMINIT) {
+	return false;
+}
+
 $GLOBALS['wp_embed'] = new WP_Embed();
 
 // Load multisite-specific files.
